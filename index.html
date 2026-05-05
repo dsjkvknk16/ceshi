@@ -1,0 +1,824 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anna Valenti | Private Profile</title>
+  <style>
+    :root {
+      --black: #050505;
+      --charcoal: #111111;
+      --graphite: #1c1c1c;
+      --steel: #6f6f6f;
+      --ash: #b8b8b8;
+      --mist: #e6e6e2;
+      --ivory: #f7f4ed;
+      --white: #ffffff;
+      --gold: #b99a55;
+      --gold-bright: #d7bd78;
+      --line: rgba(185, 154, 85, 0.34);
+      --soft-line: rgba(255, 255, 255, 0.12);
+      --shadow: 0 34px 100px rgba(0, 0, 0, 0.48);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ivory);
+      background: var(--black);
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      line-height: 1.58;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .shell {
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(180deg, var(--black), #101010 46%, #eeeeea 46%);
+      background-size: 84px 84px, auto;
+    }
+
+    .wrap {
+      width: min(1240px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 0;
+      color: var(--ash);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .seal {
+      display: inline-grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--gold);
+      color: var(--gold-bright);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 20px;
+      font-style: italic;
+      letter-spacing: 0;
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.04fr) minmax(360px, 0.96fr);
+      gap: 52px;
+      align-items: end;
+      min-height: calc(100vh - 102px);
+      padding: 30px 0 72px;
+    }
+
+    .hero::before {
+      content: "AV";
+      position: absolute;
+      left: -3vw;
+      top: 2vh;
+      z-index: 0;
+      color: rgba(255, 255, 255, 0.035);
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(160px, 31vw, 440px);
+      font-style: italic;
+      line-height: 0.8;
+      pointer-events: none;
+    }
+
+    .hero-copy,
+    .hero-visual {
+      position: relative;
+      z-index: 1;
+    }
+
+    .kicker {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 0 0 30px;
+      color: var(--gold-bright);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 58px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-family: "Bodoni 72", Didot, Georgia, "Times New Roman", serif;
+      font-size: clamp(64px, 10vw, 148px);
+      font-weight: 400;
+      line-height: 0.86;
+      letter-spacing: 0;
+    }
+
+    .script {
+      display: block;
+      margin-top: 12px;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(215, 189, 120, 0.78);
+      font-style: italic;
+    }
+
+    .statement {
+      max-width: 640px;
+      margin: 34px 0 0;
+      color: #d8d8d3;
+      font-size: 17px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      max-width: 700px;
+      margin-top: 50px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--soft-line);
+    }
+
+    .stat {
+      min-height: 112px;
+      padding: 24px 18px;
+      border-right: 1px solid var(--soft-line);
+    }
+
+    .stat:last-child {
+      border-right: 0;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--white);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 24px;
+      font-weight: 400;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 8px;
+      color: var(--ash);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .hero-visual {
+      align-self: stretch;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      gap: 18px;
+    }
+
+    .cover-card {
+      position: relative;
+      min-height: 640px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.02));
+      box-shadow: var(--shadow);
+    }
+
+    .cover-card::before,
+    .cover-card::after {
+      content: "";
+      position: absolute;
+      width: 82px;
+      height: 82px;
+      border-color: var(--gold);
+      pointer-events: none;
+    }
+
+    .cover-card::before {
+      top: -13px;
+      left: -13px;
+      border-top: 1px solid;
+      border-left: 1px solid;
+    }
+
+    .cover-card::after {
+      right: -13px;
+      bottom: -13px;
+      border-right: 1px solid;
+      border-bottom: 1px solid;
+    }
+
+    .cover-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 610px;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(0.82) contrast(1.1) brightness(0.88);
+    }
+
+    .folio {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 20px;
+      color: var(--ash);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .folio span:last-child {
+      color: var(--gold-bright);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
+      letter-spacing: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      padding: 88px 0 100px;
+      color: var(--charcoal);
+      background: var(--mist);
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 0.86fr 1.14fr;
+      gap: 42px;
+      align-items: start;
+    }
+
+    .panel {
+      border: 1px solid rgba(17, 17, 17, 0.16);
+      background: rgba(255, 255, 255, 0.52);
+    }
+
+    .identity {
+      position: sticky;
+      top: 24px;
+      padding: 34px;
+    }
+
+    .identity h2,
+    .section h2,
+    .gallery h2 {
+      margin: 0;
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(34px, 5vw, 60px);
+      font-weight: 400;
+      line-height: 0.96;
+      letter-spacing: 0;
+    }
+
+    .identity p {
+      margin: 24px 0 0;
+      color: #444;
+      font-size: 15px;
+    }
+
+    .facts {
+      display: grid;
+      gap: 0;
+      margin-top: 30px;
+      border-top: 1px solid rgba(17, 17, 17, 0.14);
+    }
+
+    .fact {
+      display: grid;
+      grid-template-columns: 132px 1fr;
+      gap: 20px;
+      padding: 17px 0;
+      border-bottom: 1px solid rgba(17, 17, 17, 0.14);
+    }
+
+    .label {
+      color: #777;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .value {
+      color: var(--charcoal);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .interests {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 30px;
+    }
+
+    .tag {
+      padding: 8px 11px;
+      border: 1px solid rgba(185, 154, 85, 0.48);
+      color: #5f4b1e;
+      background: rgba(185, 154, 85, 0.08);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .section {
+      padding: 38px;
+      margin-bottom: 24px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 30px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid rgba(17, 17, 17, 0.14);
+    }
+
+    .section-code {
+      color: var(--gold);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 32px;
+      font-style: italic;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 0;
+    }
+
+    .item {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr);
+      gap: 28px;
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(17, 17, 17, 0.12);
+    }
+
+    .item:first-child {
+      padding-top: 0;
+    }
+
+    .item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .year {
+      color: #777;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .item h3 {
+      margin: 0;
+      color: var(--charcoal);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .meta {
+      margin: 7px 0 12px;
+      color: #5f4b1e;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .item p {
+      max-width: 760px;
+      margin: 0;
+      color: #494949;
+      font-size: 14.5px;
+    }
+
+    .gallery {
+      padding-top: 92px;
+      color: var(--ivory);
+      background: var(--charcoal);
+    }
+
+    .gallery-head {
+      display: grid;
+      grid-template-columns: 1fr minmax(260px, 420px);
+      gap: 38px;
+      align-items: end;
+      margin-bottom: 38px;
+    }
+
+    .gallery-head p {
+      margin: 0;
+      color: var(--ash);
+      font-size: 15px;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr 1fr;
+      gap: 16px;
+      padding-bottom: 100px;
+    }
+
+    .photo {
+      position: relative;
+      min-height: 520px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      background: #000;
+    }
+
+    .photo:nth-child(2) {
+      margin-top: 78px;
+    }
+
+    .photo:nth-child(3) {
+      margin-top: 28px;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(0.72) contrast(1.08) brightness(0.9);
+      transition: transform 900ms ease, filter 900ms ease;
+    }
+
+    .photo:hover img {
+      transform: scale(1.035);
+      filter: grayscale(0.42) contrast(1.08) brightness(0.94);
+    }
+
+    .photo figcaption {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(215, 189, 120, 0.52);
+      color: var(--ivory);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .quote {
+      padding: 70px 0;
+      color: var(--charcoal);
+      background: var(--mist);
+    }
+
+    .quote blockquote {
+      max-width: 980px;
+      margin: 0 auto;
+      color: var(--charcoal);
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(34px, 5.3vw, 72px);
+      font-weight: 400;
+      line-height: 1.02;
+      text-align: center;
+    }
+
+    .quote cite {
+      display: block;
+      margin-top: 26px;
+      color: var(--gold);
+      font-family: Inter, Arial, sans-serif;
+      font-size: 11px;
+      font-style: normal;
+      font-weight: 900;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    footer {
+      padding: 34px 0;
+      color: var(--ash);
+      background: var(--black);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .content-grid,
+      .gallery-head,
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .cover-card {
+        min-height: auto;
+      }
+
+      .cover-card img {
+        min-height: 0;
+        aspect-ratio: 4 / 5;
+      }
+
+      .identity {
+        position: static;
+      }
+
+      .photo,
+      .photo:nth-child(2),
+      .photo:nth-child(3) {
+        min-height: auto;
+        margin-top: 0;
+      }
+
+      .photo img {
+        aspect-ratio: 4 / 5;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        width: min(100% - 26px, 1240px);
+      }
+
+      .hero-stats,
+      .item,
+      .fact {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        border-right: 0;
+        border-bottom: 1px solid var(--soft-line);
+      }
+
+      .stat:last-child {
+        border-bottom: 0;
+      }
+
+      .section,
+      .identity {
+        padding: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <nav class="nav wrap" aria-label="Profile masthead">
+      <div class="seal">AV</div>
+      <span>Private Profile / 2026</span>
+    </nav>
+
+    <header class="hero wrap">
+      <div class="hero-copy">
+        <p class="kicker">High Net Worth Personal Profile</p>
+        <h1>Anna <span class="script">Valenti</span></h1>
+        <p class="statement">
+          A luxury beauty executive with a Wharton finance background, a European commercial portfolio, and a private investor's discipline across digital assets, real estate pressure cycles, and short-term trading.
+        </p>
+        <div class="hero-stats" aria-label="Profile highlights">
+          <div class="stat">
+            <strong>Chanel</strong>
+            <span>Regional Sales Director</span>
+          </div>
+          <div class="stat">
+            <strong>Wharton</strong>
+            <span>MSc Finance</span>
+          </div>
+          <div class="stat">
+            <strong>Europe</strong>
+            <span>Luxury Market Scope</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <figure class="cover-card">
+          <img src="assets/anna-valenti-4.jpg" alt="Anna Valenti in an evening white dress">
+        </figure>
+        <div class="folio">
+          <span>Mykonos / Private Collection</span>
+          <span>01</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="wrap content-grid">
+        <aside class="panel identity">
+          <h2>Quiet wealth, disciplined taste.</h2>
+          <p>
+            Anna Valenti represents a composed, globally educated profile: refined retail leadership, financial fluency, and a lifestyle shaped by travel, performance, and private capital awareness.
+          </p>
+          <div class="facts">
+            <div class="fact">
+              <span class="label">Born</span>
+              <span class="value">May 18, 1988 - Taurus</span>
+            </div>
+            <div class="fact">
+              <span class="label">Age</span>
+              <span class="value">37, turning 38 on May 18, 2026</span>
+            </div>
+            <div class="fact">
+              <span class="label">Build</span>
+              <span class="value">178 cm / 62 kg</span>
+            </div>
+            <div class="fact">
+              <span class="label">Residence</span>
+              <span class="value">2418 Pacific Ave, San Francisco, CA 94115, USA</span>
+            </div>
+          </div>
+          <div class="interests">
+            <span class="tag">Fitness</span>
+            <span class="tag">Tennis</span>
+            <span class="tag">Hiking</span>
+            <span class="tag">Travel</span>
+          </div>
+        </aside>
+
+        <div>
+          <section class="panel section">
+            <div class="section-head">
+              <h2>Education</h2>
+              <span class="section-code">I</span>
+            </div>
+            <div class="timeline">
+              <article class="item">
+                <div class="year">1994 - 1999</div>
+                <div>
+                  <h3>San Francisco Girls' School</h3>
+                  <p class="meta">Entered at 6 / Graduated at 11 / Five-year program</p>
+                  <p>Completed primary education in San Francisco, establishing early academic discipline, communication skills, and social polish.</p>
+                </div>
+              </article>
+              <article class="item">
+                <div class="year">1999 - 2002</div>
+                <div>
+                  <h3>Convent of the Sacred Heart</h3>
+                  <p class="meta">Entered at 11 / Graduated at 14 / Three-year program</p>
+                  <p>Developed a refined foundation in etiquette, self-discipline, and elite all-girls academic culture.</p>
+                </div>
+              </article>
+              <article class="item">
+                <div class="year">2002 - 2006</div>
+                <div>
+                  <h3>Convent of the Sacred Heart High School</h3>
+                  <p class="meta">Entered at 14 / Graduated at 18 / Four-year program</p>
+                  <p>Completed high school with a strong preparation for business, economics, and international study.</p>
+                </div>
+              </article>
+              <article class="item">
+                <div class="year">2007 - 2010</div>
+                <div>
+                  <h3>University of Pennsylvania</h3>
+                  <p class="meta">BSc in International Economics and Management</p>
+                  <p>Studied global markets, management systems, cross-border business operations, and the mechanics of international commercial growth.</p>
+                </div>
+              </article>
+              <article class="item">
+                <div class="year">2010 - 2012</div>
+                <div>
+                  <h3>The Wharton School of the University of Pennsylvania</h3>
+                  <p class="meta">MSc in Finance</p>
+                  <p>Advanced her financial training through capital markets, investment logic, portfolio judgment, and high-level analytical discipline.</p>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="panel section">
+            <div class="section-head">
+              <h2>Career</h2>
+              <span class="section-code">II</span>
+            </div>
+            <div class="timeline">
+              <article class="item">
+                <div class="year">2012 - 2016</div>
+                <div>
+                  <h3>Estee Lauder - Regional Sales Analyst</h3>
+                  <p class="meta">European airport duty-free analytics</p>
+                  <p>Anna entered Estee Lauder after graduation, monitoring major European airport duty-free sales through remote data systems and converting shade-level lipstick performance into replenishment decisions.</p>
+                </div>
+              </article>
+              <article class="item">
+                <div class="year">2016</div>
+                <div>
+                  <h3>Initial Digital Asset Allocation</h3>
+                  <p class="meta">BTC near $610 / ETH near $13</p>
+                  <p>After receiving an approximately EUR 20,000 quarterly sales bonus, she allocated capital into BTC and ETH as smart contracts shifted the conversation around blockchain from simple money transfer to programmable finance.</p>
+                </div>
+              </article>
+              <article class="item">
+                <div class="year">2017 - 2023</div>
+                <div>
+                  <h3>Chanel - Omnichannel Sales Lead</h3>
+                  <p class="meta">Digital, telephone, and boutique consistency</p>
+                  <p>At Chanel, Anna led the alignment of mobile browsing, remote advisory calls, and in-person boutique service into one seamless luxury client experience.</p>
+                </div>
+              </article>
+              <article class="item">
+                <div class="year">2020</div>
+                <div>
+                  <h3>Liquidity Shock and Recovery</h3>
+                  <p class="meta">Pandemic bonuses paused / crypto drawdown / real estate pressure</p>
+                  <p>During the pandemic, cancelled bonuses, a severe crypto market crash, and real estate loan obligations created a serious cash-flow fracture. The experience sharpened her distrust of rigid banking structures and forced a more tactical approach to liquidity.</p>
+                </div>
+              </article>
+              <article class="item">
+                <div class="year">2020 - 2022</div>
+                <div>
+                  <h3>Short-Term Trading Development</h3>
+                  <p class="meta">Guided by an experienced private banker</p>
+                  <p>Through her aunt, an accomplished banker who had already achieved financial independence, Anna began studying short-term crypto trading and rebuilt capital through disciplined, tactical execution.</p>
+                </div>
+              </article>
+              <article class="item">
+                <div class="year">2023 - Present</div>
+                <div>
+                  <h3>Chanel - Regional Sales Director</h3>
+                  <p class="meta">European regional sales leadership</p>
+                  <p>After the pandemic, Anna became Regional Sales Director, overseeing sales across much of Europe and leading her own team within the luxury beauty market.</p>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <section class="gallery">
+      <div class="wrap gallery-head">
+        <h2>Private Visual Archive</h2>
+      </div>
+      <div class="wrap photo-grid">
+        <figure class="photo">
+          <img src="assets/anna-valenti-2.jpg" alt="Anna Valenti portrait in evening attire">
+          <figcaption><span>Mykonos</span><span>Portrait 02</span></figcaption>
+        </figure>
+        <figure class="photo">
+          <img src="assets/anna-valenti-3.jpg" alt="Anna Valenti full-length evening portrait">
+          <figcaption><span>Private Residence</span><span>Portrait 03</span></figcaption>
+        </figure>
+        <figure class="photo">
+          <img src="assets/anna-valenti.jpg" alt="Anna Valenti formal evening portrait">
+          <figcaption><span>Evening Edit</span><span>Portrait 04</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="quote">
+      <div class="wrap">
+        <blockquote>
+          "Real elegance is not display. It is control, timing, liquidity, and silence."
+          <cite>Anna Valenti - Private Profile</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <footer>
+      Anna Valenti / Private Executive Profile / San Francisco - Europe
+    </footer>
+  </div>
+</body>
+</html>
